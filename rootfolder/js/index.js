@@ -54,7 +54,12 @@ addEvent(window, 'click', function (event) {
 })();
 
 
+var a = new Array(10);
+for(var i=0;i<a.length;i++){
+  a[i] = '';
+}
 
+  i=0;
   var yum = document.createElement('p');
   var msie = /*@cc_on!@*/0;
   yum.style.opacity = 1;
@@ -67,7 +72,11 @@ addEvent(window, 'click', function (event) {
 
     addEvent(el, 'dragstart', function (e) {
       e.dataTransfer.effectAllowed = 'copy'; // only dropEffect='copy' will be dropable
-      e.dataTransfer.setData('Text', this.id); // required otherwise doesn't work
+      e.dataTransfer.setData('Text', this.id);
+      //a[i++]=this.id;
+      a[i++]=this.id;
+
+      // required otherwise doesn't work
     });
   }
 
@@ -91,11 +100,58 @@ addEvent(window, 'click', function (event) {
   });
 
   addEvent(bin, 'drop', function (e) {
+
     if (e.stopPropagation) e.stopPropagation(); // stops the browser from redirecting...why???
 
-    var el = document.getElementById(e.dataTransfer.getData('Text'));
-    
+    var el = document.getElementById(e.dataTransfer.getData('text'));
+    //window.alert(a);
+
     el.parentNode.removeChild(el);
+    if(a==",,,stomach pain,,,,,,")
+    {
+      //<body bgcolor="#f56a6a">
+      document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>FOOD POISONING<br>INDIGESTION<br>ACIDITY<br>");
+      //</body>
+    }
+    else if (a==",,,low appetite,,,,,,") {
+        document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>ANIXIETY<br>DEPRESSION<br>HYPOTHYROIDISM<br>");
+    }
+    else if (a==",,,loose stools,,,,,,") {
+        document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>FOOD POISONING<br>GASTROENTERITITIS<br>FOOD ALLERGY<br>");
+    }
+    else if (a==",,,,,,Heavy sweating,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>STRESS<br>OBESITY<br>HEAT EXHAUSTION<br>");
+    }
+    else if (a==",,,,,,Head ache,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>STIFF NECK<br>SHAKING CHILLS<br>EXTREME FATIGUE<br>");
+    }
+    else if (a==",,,,,,vomitting,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>FOOD POISONING<br>MOTION SICKNESS<br>ULSER<br>");
+    }
+    else if (a==",,,,,,memory loss,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>STRESS<br>DEMENTIA<br>SMOKING<br>");
+    }
+    else if (a==",,,,,,speech difficulty,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>DEMENTIA<br>VOCAL CORD DAMAGE<br>MUSCLE WEAKNESS<br>");
+    }
+    else if (a==",,,,,,vomitting blood,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>GASTRITIS<br>ESOPHAGATIS<br>CIRRHOSIS<br>");
+    }
+    else if (a==",,,,,Cramps,,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>RICKETS<br>LOW BLOOD POTASSIUM OR SODIUM<br>SPRAINS&STRAINS<br>");
+    }
+    else if (a==",,,,,Bone Pain,,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE:</h2> <br>RICKETS<br>CALCIUM DEFICIENCY<br>STRAINS<br>");
+    }
+    else if (a==",,,,,Bleeding,,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE DUE TO:</h2> <br>WOUNDS<br>ACCIDENT<br>");
+    }
+    else if (a==",,,,,Deep cut,,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE DUE TO:</h2> <br>SPORTS INJURIES<br>ACCIDENTS<br>ANIMAL BITES<br>");
+    }
+    else if (a==",,,,,Burns,,,,") {
+          document.write("<style>body{background-color:#F56A6A}</style><h1>THE POSSIBLE DISEASES ARE DUE TO:</h2> <br>FIRE<br>ELECTRIC CURRENTS <br>RADIATION EXPOSTURE<br>");
+    }
 
 
     // stupid nom text + fade effect
